@@ -1,0 +1,8 @@
+---
+- name: obtain login credentials
+  include_vars: /usr/local/share/ansible/auth/secrets.yml
+
+- name: Set Username and Password
+  set_fact:
+   remote_user: "{{ creds['username'] }}"
+   ansible_ssh_pass: "{{ creds['password'] }}"
